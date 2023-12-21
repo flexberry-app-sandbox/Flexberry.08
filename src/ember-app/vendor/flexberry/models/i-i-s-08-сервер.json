@@ -1,0 +1,174 @@
+﻿{
+  "name": "IIS08Сервер",
+  "modelName": "i-i-s-08-сервер",
+  "className": "Сервер",
+  "nameSpace": "IIS.08",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "iP",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "порт",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "протокол",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудник",
+      "relatedTo": "i-i-s-08-сотрудник",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "программы",
+      "relatedTo": "i-i-s-08-программы",
+      "inverse": "сервер"
+    },
+    {
+      "name": "настройки",
+      "relatedTo": "i-i-s-08-настройки",
+      "inverse": "сервер"
+    }
+  ],
+  "projections": [
+    {
+      "name": "СерверE",
+      "modelName": "i-i-s-08-сервер",
+      "attrs": [
+        {
+          "name": "iP",
+          "caption": "IP",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "порт",
+          "caption": "Порт",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "протокол",
+          "caption": "Протокол",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Имя",
+          "lookupValueField": "имя",
+          "relationName": "Сотрудник",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "имя",
+              "caption": "Имя",
+              "hidden": true,
+              "index": 4
+            }
+          ],
+          "index": 3,
+          "type": "standard",
+          "caption": "Сотрудник",
+          "name": "сотрудник",
+          "relatedTo": "i-i-s-08-сотрудник",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ПрограммыE",
+          "caption": "Программы",
+          "name": "программы",
+          "relatedTo": "i-i-s-08-программы",
+          "inverse": null
+        },
+        {
+          "projectionName": "НастройкиE",
+          "caption": "Настройки",
+          "name": "настройки",
+          "relatedTo": "i-i-s-08-настройки",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "СерверL",
+      "modelName": "i-i-s-08-сервер",
+      "attrs": [
+        {
+          "name": "iP",
+          "caption": "IP",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "порт",
+          "caption": "Порт",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "протокол",
+          "caption": "Протокол",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудник",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "имя",
+              "caption": "Имя",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Имя",
+          "name": "сотрудник",
+          "relatedTo": "i-i-s-08-сотрудник",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

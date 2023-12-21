@@ -1,0 +1,108 @@
+﻿{
+  "name": "IIS08Программы",
+  "modelName": "i-i-s-08-программы",
+  "className": "Программы",
+  "nameSpace": "IIS.08",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "версия",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "едИзмерения",
+      "type": "i-i-s-08-ед-изм",
+      "flexberryType": "ЕдИзм",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "название",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "описание",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "размер",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сервер",
+      "relatedTo": "i-i-s-08-сервер",
+      "inverse": "программы"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ПрограммыE",
+      "modelName": "i-i-s-08-программы",
+      "attrs": [
+        {
+          "name": "название",
+          "caption": "Название",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "описание",
+          "caption": "Описание",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "версия",
+          "caption": "Версия",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "размер",
+          "caption": "Размер",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "едИзмерения",
+          "caption": "Ед измерения",
+          "hidden": false,
+          "index": 4
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

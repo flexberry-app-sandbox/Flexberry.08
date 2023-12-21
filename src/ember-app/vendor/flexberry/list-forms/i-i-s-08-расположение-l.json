@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-08-расположение-e",
+  "editForm": "i-i-s-08-расположение-e",
+  "external": false,
+  "caption": "Расположение",
+  "name": "IIS08РасположениеL",
+  "className": "РасположениеL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-08-расположение",
+      "modelProjection": "РасположениеL"
+    }
+  ]
+}

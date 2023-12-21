@@ -1,0 +1,93 @@
+﻿{
+  "name": "IIS08Настройки",
+  "modelName": "i-i-s-08-настройки",
+  "className": "Настройки",
+  "nameSpace": "IIS.08",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаНачала",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "датаОкончания",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "описание",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "типНастроек",
+      "type": "i-i-s-08-тип-настр",
+      "flexberryType": "ТипНастр",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сервер",
+      "relatedTo": "i-i-s-08-сервер",
+      "inverse": "настройки"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "НастройкиE",
+      "modelName": "i-i-s-08-настройки",
+      "attrs": [
+        {
+          "name": "типНастроек",
+          "caption": "Тип настроек",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "датаНачала",
+          "caption": "Дата начала",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "датаОкончания",
+          "caption": "Дата окончания",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "описание",
+          "caption": "Описание",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

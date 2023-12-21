@@ -1,0 +1,73 @@
+<h3 class="ui header">{{t "forms.i-i-s-08-отчет-о-сервере-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field" data-test-i-i-s-08-отчет-о-сервере-e-режим="true">
+    <label>{{t "forms.i-i-s-08-отчет-о-сервере-e.режим-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-08-режим-сервера")
+      value=model.режим
+      class=(if (v-get validationModel "режим" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "режим" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-08-отчет-о-сервере-e.сервер-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.сервер
+      displayAttributeName="iP"
+      autocomplete=true
+      relationName="сервер"
+      projection="СерверL"
+      title=(t "forms.i-i-s-08-отчет-о-сервере-e.сервер-caption")
+      readonly=readonly
+      componentName="серверLookup"
+      class=(if (v-get validationModel "сервер" "isInvalid") "error")
+      data-test-i-i-s-08-отчет-о-сервере-e-сервер=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "сервер" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-08-отчет-о-сервере-e.расположение-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.расположение
+      displayAttributeName="адрес"
+      autocomplete=true
+      relationName="расположение"
+      projection="РасположениеL"
+      title=(t "forms.i-i-s-08-отчет-о-сервере-e.расположение-caption")
+      readonly=readonly
+      componentName="расположениеLookup"
+      class=(if (v-get validationModel "расположение" "isInvalid") "error")
+      data-test-i-i-s-08-отчет-о-сервере-e-расположение=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "расположение" "message")}}
+  </div>
+</form>
